@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Days since Kentucky won a NCAA Tournament Game</title>
+		<style>
+			#section{
+				text-align: center;
+				margin-top: 10%;
+				margin-right: 5%;
+				margin-left: 5%;
+			}
+
+			p{
+				font-family: Arial, sans-serif;
+				font-size: 75pt;
+				font-weight: bold;
+				color: #0133a0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="section">
+			<p id="days">
+				Kentucky has not won a NCAA Tournament Game since March 29, 2019
+			</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		setInterval(updateHtml, 60000);
+		function updateHtml() {
+			console.log("update ")
+			var date1 = new Date("03/29/2019");
+			var date2 = new Date();
+			const element = document.getElementById("days");
+			var difference_time = date2.getTime() - date1.getTime();
+			var difference_days = Math.floor(difference_time / (1000 * 3600 * 24)) - 1;
+			var difference_text = difference_days + " DAYS SINCE KENTUCKY WON A NCAA TOURNAMENT GAME";
+			element.innerHTML = difference_text;
+		}
+		updateHtml();
+	</script>
+</html>
