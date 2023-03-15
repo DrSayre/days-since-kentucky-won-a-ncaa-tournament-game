@@ -31,7 +31,7 @@
 			var date2 = new Date();
 			const element = document.getElementById("days");
 			var difference_time = date2.getTime() - date1.getTime();
-			var difference_days = Math.floor(difference_time / (1000 * 3600  24)) - 1;
+			var difference_days = Math.floor(difference_time / (1000 * 3600 * 24)) - 1;
 			var difference_text = difference_days + " DAYS SINCE KENTUCKYWON A NCAA TOURNAMENT GAME";
 			element.innerHTML = difference_text;
 		}
