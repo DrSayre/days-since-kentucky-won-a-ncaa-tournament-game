@@ -16,16 +16,20 @@
 				color: #0133a0;
 			}
 		</style>
+		<script type="text/javascript">
+			setInterval(updateHtml, 1000);
+			function updateHtml() {
+				var date1 = new Date("03/29/2019");
+				var date2 = new Date();
+				const element = document.getElementById("days");
+				var difference_time = date2.getTime() - date1.getTime();
+				var difference_days = Math.floor(difference_time / (1000 * 3600 * 24)) - 1;
+				var difference_text = difference_days + " DAYS SINCE KENTUCKY WON A NCAA TOURNAMENT GAME";
+				element.innerHTML = difference_text;
+			}
+			updateHtml();
+		</script>
 	</head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y6FBW7J74Y"></script>
-	<script>
-  		window.dataLayer = window.dataLayer || [];
-  		function gtag(){dataLayer.push(arguments);}
-  		gtag('js', new Date());
-
-  		gtag('config', 'G-Y6FBW7J74Y');
-	</script>
 	<body>
 		<div id="section">
 			<p id="days">
@@ -33,17 +37,4 @@
 			</p>
 		</div>
 	</body>
-	<script type="text/javascript">
-		setInterval(updateHtml, 1000);
-		function updateHtml() {
-			var date1 = new Date("03/29/2019");
-			var date2 = new Date();
-			const element = document.getElementById("days");
-			var difference_time = date2.getTime() - date1.getTime();
-			var difference_days = Math.floor(difference_time / (1000 * 3600 * 24)) - 1;
-			var difference_text = difference_days + " DAYS SINCE KENTUCKY WON A NCAA TOURNAMENT GAME";
-			element.innerHTML = difference_text;
-		}
-		updateHtml();
-	</script>
 </html>
